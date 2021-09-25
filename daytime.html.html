@@ -1,0 +1,77 @@
+<html>
+    <head>
+<style>
+body{
+background-image:linear-gradient(orange,white,blue,green,yellow);
+}
+</style>
+        <script>
+function dispDate(){
+        var d;
+        d=new Date();
+var m=d.getMonth()+1;
+         var time=d.getHours()+"::"+d.getMinutes()+"::"+d.getSeconds();
+        document.getElementById("time").innerHTML = time;
+    var date=d.getDate()+"/"+m+"/"+d.getFullYear();
+        document.getElementById("date").innerHTML = date;
+        id=window.setTimeout("dispDate()",1000);
+
+    }
+                   var d=new Date();
+                     var h=d.getHours();
+                   if(h<=12){
+                 document.write("<font size='+7' color='green'>Good Morning<br></font>");
+document.write("<img src='abcd/morningsun.jpg' align='right' height='400' width='400' title='Good Morning'>");
+                }
+  else if (h>12&&h<=16){
+document.write("<font size='+7' color='green'>Good After Noon<br></font>");
+document.write("<img src='abcd/afternoon.jpg' align='right' height='400' width='400' title='Good AfterNoon'>");
+}
+else if(h>16&&h<=20){
+document.write("<font size='+7' color='green'>Good Evening<br></font>");
+document.write("<img src='abcd/sunset.jpeg' align='right' height='400' width='400' title='Good Evening'>");
+}
+else if(h>20&&h<=23){
+document.write("<font size='+7' color='green'>Good Night And Have A Sweet Dream<br></font>");
+document.write("<img src='abcd/night.jpg' align='right' height='400' width='400' title='Good night'>");
+}
+switch(d.getDay())
+{
+case 0:
+document.write("<font size='+7' color='darkblue'>Today is Sunday</font>");
+document.write("<img src='abcd/sun.jpg' align='right' height='400' width='400' title='Surya Dev'>");
+break;
+case 1:
+document.write("<font size='+7' color='darkblue'>Today is Monday</font>");
+document.write("<img src='abcd/shiv.jpg' align='right' height='400' width='400' title='Lord Shiv'>");
+break;
+case 2:
+document.write("<font size='+7' color='darkblue'>Today is Tuesday</font>");
+document.write("<img src='abcd/hanuman.jpg' align='right' height='400' width='400' title='Lord Hanuman'>");
+break;
+case 3:
+document.write("<font size='+7' color='darkblue'>Today is Wednesday</font>");
+document.write("<img src='abcd/ganesh.jpg' align='right' height='400' width='400' title='Lord Ganesh'>");
+break;
+case 4:
+document.write("<font size='+7' color='darkblue'>Today is Thursday</font>");
+document.write("<img src='abcd/vishnu.jpg' align='right' height='400' width='400' title='God Vishnu'>");
+break;
+case 5:
+document.write("<font size='+7' color='darkblue'>Today is Friday</font>");
+document.write("<img src='abcd/durga.jpg' align='right' height='400' width='400' title='Devi Durga'>");
+break;
+case 6:
+document.write("<font size='+7' color='darkblue'>Today is Saturday</font>");
+document.write("<img src='abcd/sani.jpeg' align='right' height='400' width='400' title='Sanidev'>");
+break;
+}
+
+        </script>
+    </head>
+    <body onLoad="dispDate();">
+<br><br><br>
+ <font size='+7' color='yellow'>Time :<div id="time"></div></font><br/>   
+ <font size='+7' color='red'>Date :<div id="date"></div></font>
+    </body>
+</html>
