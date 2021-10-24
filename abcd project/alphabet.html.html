@@ -1,0 +1,139 @@
+<html>
+   <head>
+<style>
+    
+  body
+  
+    {
+ 
+       background-image: linear-gradient(blue,white,green,tan,orange,purple,grey);
+
+      }
+
+      *{
+
+        margin: 10px;
+   
+   }
+    
+  #alpha,#img
+      {
+ 
+       display: inline-block;
+        
+height: 525px;
+      
+  width: 600px;
+    
+    border: 2px solid black;
+      
+  margin: auto;
+      
+  position: absolute;
+    
+    
+      }
+ 
+     #img
+ 
+     {
+  
+      left: 630px;
+   
+   }
+ 
+     #alpha
+   
+   {
+ 
+       text-shadow: 15px -2px 10px blue;
+    
+    padding: 0px;
+ 
+       text-align: center;
+  
+      font-size: 550px;
+     
+   color: black;
+ 
+       font-weight: bold;
+    
+    
+      }
+
+    </style>
+     </head>
+ 
+ <body onkeyup="Callme(event)">
+
+    <div id="alpha"></div>
+
+    <div><img src="que.jpg" height="100" width="150" id="img"></div>
+  
+  <script> 
+v=["Ant","Boy","Car","Duck","Earth","Flower","Giraffe","Helicopter","Igloo","jug","Kangaroo","Lion","Monkey","Nest","Orange","Potato","Queen","Rabbit","Sun","Tree","Umbrella","Van","Watch","Xylophone","Yak","Zebra"];
+    
+  
+      var alpha=document.getElementById("alpha");
+   
+   var img=document.getElementById("img");
+  
+    function Callme(e)
+      {
+    
+    x=e.keyCode;
+      
+  
+        if(x>=65 && x<=90)
+     
+   {
+   
+       alpha.innerHTML=(String.fromCharCode(e.keyCode));
+   
+       img.src=(String.fromCharCode(e.keyCode+32)+".jpg");
+ 
+         str=String.fromCharCode(e.keyCode)+" for "+v[x-65];
+
+          
+          if(speechSynthesis)
+    
+      {
+           
+ console.log("hii")
+      
+      var speech=new SpeechSynthesisUtterance();
+    
+        speech.lang="en-us";
+   
+         speech.text=str;
+   
+         speech.volume=1;
+     
+       speech.rate=0.5;
+   
+         speech.pitch=2;
+    
+        window.speechSynthesis.speak(speech);
+   
+       }
+
+        }
+
+        else
+   
+     {
+    
+      img.src="ang.jpg";
+   
+       alpha.innerHTML=(String.fromCharCode(e.keyCode));
+
+        }
+  
+      }
+
+    </script>
+
+  
+</body>
+
+</html>
